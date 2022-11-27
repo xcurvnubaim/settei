@@ -21,7 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'service = settei.ReadService:main',
-            
+            'client = settei.client:main',
         ],
     },
 )

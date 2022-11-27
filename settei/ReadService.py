@@ -1,5 +1,5 @@
-from settei_interfaces.srv import ReadData
-# from read import getdata
+from settei_interfaces.srv import GetData    
+from settei import read_data  
 import rclpy
 from rclpy.node import Node
 
@@ -8,16 +8,12 @@ class MinimalService(Node):
 
     def __init__(self):
         super().__init__('minimal_service')
-        self.srv = self.create_service(ReadData, 'read_data', self.read_data)
+        self.srv = self.create_service(GetData, 'get_data', self.get_data_callback)        
 
-    def read_data(self, request, response):
-        # x = read(request.package,request.robot,request.branch)
-        response.filename_array = 'hello world'
-        # response.data_array = 'hello world'
-        # self.get_logger().info('Incoming request\n: %s : %s : %s' % (request.package, request.robot,request.branch))
-
+    def get_data_callback(self, request, response):
+        response.filename_array = read_data(request.package,request.robot,request.branch)                                            
+        self.get_logger().info('Incoming request\n: %s : %s : %s' % (request.package, request.robot, request.branch)) 
         return response
-
 
 def main(args=None):
     rclpy.init(args=args)
@@ -27,7 +23,6 @@ def main(args=None):
     rclpy.spin(minimal_service)
 
     rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()

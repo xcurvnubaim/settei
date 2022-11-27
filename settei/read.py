@@ -1,6 +1,6 @@
 from settei import SqliteHandler
 
-def getdata(package,robot,branch)->list:
+def read_data(package,robot,branch)->list:
     sql_handler = SqliteHandler()
     x = sql_handler.load_filename(package,branch)
     filename_arr = []
