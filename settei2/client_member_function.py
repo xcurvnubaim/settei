@@ -1,4 +1,4 @@
-from settei_interfaces.srv import GetData       
+from settei_interfaces.srv import GetData       # CHANGE
 import sys
 import rclpy
 from rclpy.node import Node
@@ -8,15 +8,15 @@ class MinimalClientAsync(Node):
 
     def __init__(self):
         super().__init__('minimal_client_async')
-        self.cli = self.create_client(GetData, 'get_data')       
+        self.cli = self.create_client(GetData, 'get_data')       # CHANGE
         while not self.cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
-        self.req = GetData.Request()                                   
+        self.req = GetData.Request()                                   # CHANGE
 
     def send_request(self):
         self.req.package = sys.argv[1]
         self.req.robot = sys.argv[2]
-        self.req.branch = sys.argv[3]                  
+        self.req.branch = sys.argv[3]                  # CHANGE
         self.future = self.cli.call_async(self.req)
 
 
@@ -36,8 +36,7 @@ def main(args=None):
                     'Service call failed %r' % (e,))
             else:
                 minimal_client.get_logger().info(
-                    'Result : for %s + %s + %s ' %                               
-                    (minimal_client.req.package, minimal_client.req.robot, minimal_client.req.branch)) 
+                    'succes') # CHANGE
             break
 
     minimal_client.destroy_node()

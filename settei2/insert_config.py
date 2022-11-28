@@ -1,6 +1,6 @@
-from settei import SqliteHandler
+from settei2 import SqliteHandler
 
-def write(package,robot,branch,filename_arr,data_arr):
+def write_data(package,robot,branch,filename_arr,data_arr):
     sql_handler = SqliteHandler()
     arr_size = len(filename_arr)
     for idx in range(arr_size):

@@ -1,4 +1,4 @@
-from settei import SqliteHandler,read_data,write
+from settei2 import SqliteHandler,read_data,write_data
 
 
 def test_database():
@@ -12,8 +12,6 @@ def test_database():
     filename_arr = ['kinematic.json','walking.json']
     data_arr = ['hello world','hello world']
 
-    write(package,robot,branch,filename_arr,data_arr)
+    write_data(package,robot,branch,filename_arr,data_arr)
     x,y = read_data(package,robot,branch)
     assert x == filename_arr and y== data_arr, "error on test_database"
-
-test_database()

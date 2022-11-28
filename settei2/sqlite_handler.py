@@ -2,7 +2,7 @@ from sqlite3 import connect,Connection,Cursor,Row
 
 class SqliteHandler():
     def __init__(self):
-        self.connection: Connection = connect("resource/settei")
+        self.connection: Connection = connect("settei")
         # self.connection.row_factory = Row
         self.cursor: Cursor = self.connection.cursor()
 

@@ -1,4 +1,4 @@
-from settei import SqliteHandler
+from settei2 import SqliteHandler
 
 def read_data(package,robot,branch)->list:
     sql_handler = SqliteHandler()
