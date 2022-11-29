@@ -23,6 +23,8 @@ setup(
             'settei2 = settei2.settei2:main',
             'service = settei2.service_member_function:main',
             'client = settei2.client_member_function:main',
+            'talker = settei2.publisher_member_function:main',
+            'listener = settei2.subscriber_member_function:main',
         ],
     },
 )
