@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
-
-from settei_interfaces.msg import WriteData        # CHANGE
+from settei import write_data
+from settei_interfaces.msg import WriteData        
 
 
 class MinimalSubscriber(Node):
@@ -9,17 +9,20 @@ class MinimalSubscriber(Node):
     def __init__(self):
         super().__init__('minimal_subscriber')
         self.subscription = self.create_subscription(
-            WriteData,                                              # CHANGE
+            WriteData,                                              
             'topic',
             self.listener_callback,
             10)
         self.subscription
 
     def listener_callback(self, msg):
-            self.get_logger().info(f'''
-            {msg.package} ; {msg.robot} ; {msg.branch} ;
-            {msg.filename} ; {msg.data}
-            ''') # CHANGE
+        write_data(msg.package, msg.robot, msg.branch,
+        msg.filename_array,msg.data_array)
+
+        self.get_logger().info(f'''
+        {msg.package} ; {msg.robot} ; {msg.branch} ;
+        {msg.filename_array} ; {msg.data_array}
+        ''') 
 
 
 def main(args=None):

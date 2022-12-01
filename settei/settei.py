@@ -1,4 +1,4 @@
-from settei2 import *
+from settei import *
 
 def main():
     sqlite_handle = SqliteHandler()

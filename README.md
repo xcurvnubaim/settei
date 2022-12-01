@@ -31,11 +31,11 @@ run package
 ```
 
 ```
-ros2 run settei2 settei2
+ros2 run settei settei
 ```
 
 ```
-ros2 run settei2 service
+ros2 run settei service
 ```
 
 in another terminal
@@ -45,7 +45,7 @@ in another terminal
 ```
 
 ```
-ros2 run settei2 client <package_name> <robot> <branch>
+ros2 run settei client <package_name> <robot> <branch>
 ```
 
 ### output in service terminal should be

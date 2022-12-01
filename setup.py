@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'settei2'
+package_name = 'settei'
 
 setup(
     name=package_name,
@@ -20,11 +20,11 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'settei2 = settei2.settei2:main',
-            'service = settei2.service_member_function:main',
-            'client = settei2.client_member_function:main',
-            'talker = settei2.publisher_member_function:main',
-            'listener = settei2.subscriber_member_function:main',
+            'settei = settei.settei:main',
+            'service = settei.service_member_function:main',
+            'client = settei.client_member_function:main',
+            'talker = settei.publisher_member_function:main',
+            'listener = settei.subscriber_member_function:main',
         ],
     },
 )

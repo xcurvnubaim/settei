@@ -1,0 +1,57 @@
+Requirements:
+
+- Read config
+
+- Write config
+
+- Handle multiple package, robot, and branch
+
+- Handle revert
+
+Flow (Sudah ada confignya):
+
+1. Read saat init (Call service -> settei)
+
+2. Write saat file diupdate (Call service -> settei)
+
+Flow (Tidak ada confignya):
+
+1. Write data (Call service -> settei)
+
+2. Write saat file diupdate (Call service -> settei)
+
+Services:
+
+- Read:
+
+package
+
+robot
+
+branch
+
+---
+
+filename array data array
+
+Publisher:
+
+- Write:
+
+package, robot, branch, filename array, data array
+
+Table Config:
+
+- id
+
+- package
+
+- robot
+
+- branch
+
+- filename
+
+- data
+
+- datetime
