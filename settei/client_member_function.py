@@ -36,7 +36,7 @@ def main(args=None):
                     'Service call failed %r' % (e,))
             else:
                 minimal_client.get_logger().info(
-                    'succes') # CHANGE
+                    'succes')
             break
 
     minimal_client.destroy_node()
@@ -45,3 +45,7 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
+
+
+
