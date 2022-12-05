@@ -1,11 +1,9 @@
-from settei2 import SqliteHandler,read_data,write_data
+from settei import *
 
 
 def test_database():
     sqlite_handle = SqliteHandler()
-
     sqlite_handle.create()
-
     package = 'aruku'
     robot = 'robot'
     branch = 'master'

@@ -36,7 +36,8 @@ def main(args=None):
                     'Service call failed %r' % (e,))
             else:
                 minimal_client.get_logger().info(
-                    'succes')
+                    f'''succes
+                    {response.filename_array}; {response.data_array}''')
             break
 
     minimal_client.destroy_node()

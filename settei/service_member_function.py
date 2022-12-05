@@ -15,7 +15,7 @@ class MinimalService(Node):
         response.filename_array,response.data_array = read_data(
             request.package,request.robot,request.branch
         )                                          
-        self.get_logger().info(f'{response.filename_array} ; {response.data_array}') 
+        self.get_logger().info(f'{request.package} ; {request.robot} ; {request.branch}') 
 
         return response
 
